@@ -38,6 +38,14 @@ export function RecommendationCard({ result }: { result: RecommendationResult })
           </li>
         ))}
       </ul>
+      <div className="px-4 py-3 bg-zinc-50 border-t border-zinc-200 text-xs text-zinc-700">
+        <div className="flex items-start gap-2">
+          <span className="text-2xl">⚠️</span>
+          <div>
+            Esto no es consejo médico. Las estimaciones de copago son aproximadas; confirma con tu aseguradora.
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,8 +1,7 @@
 export type Plan = {
   id: string;
   name: string;
-  type: "private" | "public";
-  aliases: string[];
+  level?: "basic" | "standard" | "premium";
   coverage_outpatient_pct: number;
   coverage_hospitalization_pct: number;
   coverage_emergency_pct: number;
@@ -12,6 +11,21 @@ export type Plan = {
     emergency: number;
   };
   summary: string;
+  // Campos de la aseguradora asociada
+  company_id?: string;
+  company_name?: string;
+  company_type?: "private" | "public" | "cooperative";
+  aliases?: string[];
+  // Para compatibilidad con código antiguo
+  type?: "private" | "public" | "cooperative";
+};
+
+export type InsuranceCompany = {
+  id: string;
+  name: string;
+  type: "private" | "public" | "cooperative";
+  description: string;
+  plans: Plan[];
 };
 
 export type Hospital = {

@@ -8,8 +8,11 @@ describe("findPlan", () => {
   });
 
   it("matches by alias", () => {
-    expect(findPlan("sanitas")?.id).toBe("sanitas-plus");
-    expect(findPlan("IESS")?.id).toBe("iess");
+    // "sanitas" ahora encuentra el primer plan que coincida con "sanitas"
+    const sanitasResult = findPlan("sanitas");
+    expect(sanitasResult?.company_name).toBe("Sanitas");
+    
+    expect(findPlan("iess-afiliado")?.id).toBe("iess-afiliado");
     expect(findPlan("Confiamed Familiar")?.id).toBe("confiamed-familiar");
   });
 
@@ -72,7 +75,7 @@ describe("recommend", () => {
     const r = recommend("Tengo fiebre", "IESS", "Quito");
     expect(r.kind).toBe("recommend");
     if (r.kind === "recommend") {
-      expect(r.plan_name).toBe("IESS");
+      expect(r.plan_name).toBe("IESS Afiliado");
       expect(r.base_copay_usd).toBe(0);
       for (const h of r.hospitals) {
         expect(h.name).toContain("IESS");

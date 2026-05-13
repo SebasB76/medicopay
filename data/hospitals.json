@@ -17,7 +17,19 @@
       "Neurología",
       "Oftalmología"
     ],
-    "accepted_plans": ["sanitas-plus", "salud-sa-premier", "axa-premium", "seguros-bolivar"],
+    "accepted_plans": [
+      "sanitas-plus",
+      "sanitas-standard",
+      "salud-sa-premier",
+      "salud-sa-essential",
+        "sanitas-basic",
+        "sanitas-standard",
+        "sanitas-plus",
+      "axa-premium",
+      "axa-protect",
+      "seguros-bolivar",
+      "bolivar-flex"
+    ],
     "copay_modifier": 1.2,
     "tier": "premium"
   },
@@ -38,8 +50,23 @@
       "Endocrinología",
       "Otorrinolaringología"
     ],
-    "accepted_plans": ["sanitas-plus", "salud-sa-premier", "confiamed-familiar", "integra-familiar", "cajasol-cooperativa"],
-    "copay_modifier": 1.0,
+    "accepted_plans": [
+      "sanitas-plus",
+      "sanitas-standard",
+      "salud-sa-premier",
+      "salud-sa-essential",
+      "confiamed-familiar",
+      "confiamed-premium-familia",
+        "sanitas-basic",
+        "sanitas-standard",
+        "sanitas-plus",
+      "integra-familiar",
+      "integra-basic",
+      "integra-premium",
+      "cajasol-cooperativa",
+      "cajasol-essential"
+    ],
+    "copay_modifier": 1,
     "tier": "standard"
   },
   {
@@ -57,7 +84,12 @@
       "Oftalmología",
       "Psiquiatría"
     ],
-    "accepted_plans": ["sanitas-plus", "seguros-bolivar"],
+    "accepted_plans": [
+      "sanitas-plus",
+      "sanitas-standard",
+      "seguros-bolivar",
+      "bolivar-flex"
+    ],
     "copay_modifier": 1.1,
     "tier": "standard"
   },
@@ -77,8 +109,18 @@
       "Dermatología",
       "Neurología"
     ],
-    "accepted_plans": ["salud-sa-premier", "confiamed-familiar", "axa-premium", "integra-familiar"],
-    "copay_modifier": 1.0,
+    "accepted_plans": [
+      "salud-sa-premier",
+      "salud-sa-essential",
+      "confiamed-familiar",
+      "confiamed-premium-familia",
+      "axa-premium",
+      "axa-protect",
+      "integra-familiar",
+      "integra-basic",
+      "integra-premium"
+    ],
+    "copay_modifier": 1,
     "tier": "standard"
   },
   {
@@ -101,8 +143,10 @@
       "Otorrinolaringología",
       "Psiquiatría"
     ],
-    "accepted_plans": ["iess"],
-    "copay_modifier": 1.0,
+    "accepted_plans": [
+      "iess-afiliado"
+    ],
+    "copay_modifier": 1,
     "tier": "public"
   },
   {
@@ -121,8 +165,16 @@
       "Psiquiatría",
       "Oftalmología"
     ],
-    "accepted_plans": ["axa-premium", "seguros-bolivar", "integra-familiar"],
-    "copay_modifier": 1.0,
+    "accepted_plans": [
+      "axa-premium",
+      "axa-protect",
+      "seguros-bolivar",
+      "bolivar-flex",
+      "integra-familiar",
+      "integra-basic",
+      "integra-premium"
+    ],
+    "copay_modifier": 1,
     "tier": "standard"
   },
   {
@@ -141,7 +193,14 @@
       "Endocrinología",
       "Neurología"
     ],
-    "accepted_plans": ["axa-premium", "salud-sa-premier", "cajasol-cooperativa"],
+    "accepted_plans": [
+      "axa-premium",
+      "axa-protect",
+      "salud-sa-premier",
+      "salud-sa-essential",
+      "cajasol-cooperativa",
+      "cajasol-essential"
+    ],
     "copay_modifier": 1.15,
     "tier": "premium"
   },
@@ -162,7 +221,15 @@
       "Dermatología",
       "Otorrinolaringología"
     ],
-    "accepted_plans": ["axa-premium", "seguros-bolivar", "integra-familiar"],
+    "accepted_plans": [
+      "axa-premium",
+      "axa-protect",
+      "seguros-bolivar",
+      "bolivar-flex",
+      "integra-familiar",
+      "integra-basic",
+      "integra-premium"
+    ],
     "copay_modifier": 0.95,
     "tier": "standard"
   },
@@ -184,7 +251,16 @@
       "Neurología",
       "Oftalmología"
     ],
-    "accepted_plans": ["sanitas-plus", "salud-sa-premier", "axa-premium", "seguros-bolivar"],
+    "accepted_plans": [
+      "sanitas-plus",
+      "sanitas-standard",
+      "salud-sa-premier",
+      "salud-sa-essential",
+      "axa-premium",
+      "axa-protect",
+      "seguros-bolivar",
+      "bolivar-flex"
+    ],
     "copay_modifier": 1.2,
     "tier": "premium"
   },
@@ -204,7 +280,16 @@
       "Gastroenterología",
       "Endocrinología"
     ],
-    "accepted_plans": ["sanitas-plus", "confiamed-familiar", "axa-premium", "seguros-bolivar"],
+    "accepted_plans": [
+      "sanitas-plus",
+      "sanitas-standard",
+      "confiamed-familiar",
+      "confiamed-premium-familia",
+      "axa-premium",
+      "axa-protect",
+      "seguros-bolivar",
+      "bolivar-flex"
+    ],
     "copay_modifier": 1.1,
     "tier": "standard"
   },
@@ -223,8 +308,18 @@
       "Oftalmología",
       "Otorrinolaringología"
     ],
-    "accepted_plans": ["salud-sa-premier", "confiamed-familiar", "integra-familiar", "cajasol-cooperativa"],
-    "copay_modifier": 1.0,
+    "accepted_plans": [
+      "salud-sa-premier",
+      "salud-sa-essential",
+      "confiamed-familiar",
+      "confiamed-premium-familia",
+      "integra-familiar",
+      "integra-basic",
+      "integra-premium",
+      "cajasol-cooperativa",
+      "cajasol-essential"
+    ],
+    "copay_modifier": 1,
     "tier": "standard"
   },
   {
@@ -246,8 +341,10 @@
       "Oftalmología",
       "Psiquiatría"
     ],
-    "accepted_plans": ["iess"],
-    "copay_modifier": 1.0,
+    "accepted_plans": [
+      "iess-afiliado"
+    ],
+    "copay_modifier": 1,
     "tier": "public"
   },
   {
@@ -265,7 +362,13 @@
       "Dermatología",
       "Psiquiatría"
     ],
-    "accepted_plans": ["confiamed-familiar", "integra-familiar"],
+    "accepted_plans": [
+      "confiamed-familiar",
+      "confiamed-premium-familia",
+      "integra-familiar",
+      "integra-basic",
+      "integra-premium"
+    ],
     "copay_modifier": 0.9,
     "tier": "standard"
   },
@@ -285,7 +388,15 @@
       "Gastroenterología",
       "Oftalmología"
     ],
-    "accepted_plans": ["axa-premium", "seguros-bolivar", "integra-familiar"],
+    "accepted_plans": [
+      "axa-premium",
+      "axa-protect",
+      "seguros-bolivar",
+      "bolivar-flex",
+      "integra-familiar",
+      "integra-basic",
+      "integra-premium"
+    ],
     "copay_modifier": 1.05,
     "tier": "standard"
   },
@@ -305,7 +416,14 @@
       "Urología",
       "Psiquiatría"
     ],
-    "accepted_plans": ["axa-premium", "seguros-bolivar", "cajasol-cooperativa"],
+    "accepted_plans": [
+      "axa-premium",
+      "axa-protect",
+      "seguros-bolivar",
+      "bolivar-flex",
+      "cajasol-cooperativa",
+      "cajasol-essential"
+    ],
     "copay_modifier": 1.05,
     "tier": "premium"
   },
@@ -325,7 +443,13 @@
       "Oftalmología",
       "Dermatología"
     ],
-    "accepted_plans": ["integra-familiar", "cajasol-cooperativa"],
+    "accepted_plans": [
+      "integra-familiar",
+      "integra-basic",
+      "integra-premium",
+      "cajasol-cooperativa",
+      "cajasol-essential"
+    ],
     "copay_modifier": 0.95,
     "tier": "standard"
   },
@@ -345,8 +469,15 @@
       "Neurología",
       "Endocrinología"
     ],
-    "accepted_plans": ["axa-premium", "seguros-bolivar", "cajasol-cooperativa"],
-    "copay_modifier": 1.0,
+    "accepted_plans": [
+      "axa-premium",
+      "axa-protect",
+      "seguros-bolivar",
+      "bolivar-flex",
+      "cajasol-cooperativa",
+      "cajasol-essential"
+    ],
+    "copay_modifier": 1,
     "tier": "standard"
   }
 ]

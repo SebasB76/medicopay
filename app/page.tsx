@@ -1,50 +1,124 @@
 "use client";
 
 import { useChat } from "ai/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChatMessage } from "@/components/chat-message";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
+import { InsuranceSelector } from "@/components/insurance-selector";
+import { PlanSelector } from "@/components/plan-selector";
+import { SymptomsInput } from "@/components/symptoms-input";
+import companiesData from "@/data/insurance-companies.json";
+import { InsuranceCompany, Plan } from "@/lib/types";
 
 const WELCOME_TEXT = `¡Hola! Soy MediCopay 🩺
 
-Cuéntame qué te pasa y te recomiendo qué especialista ver, en qué hospital, y con qué copago aproximado.
-
-Para responderte necesito tres cosas:
-1. Tus síntomas
-2. Tu seguro médico (Sanitas Plus, Salud S.A. Premier, Confiamed Familiar o IESS)
-3. Tu ciudad (Quito o Guayaquil)
-
-Por ejemplo: "Tengo fiebre y dolor de garganta hace 2 días, estoy en Quito, mi seguro es Sanitas Plus".`;
+Te ayudaré a encontrar la mejor recomendación hospitalaria según tus síntomas, aseguradora y ubicación.`;
 
 export default function Home() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error, reload, stop } =
-    useChat({
-      api: "/api/chat",
-      initialMessages: [
-        {
-          id: "welcome",
-          role: "assistant",
-          content: WELCOME_TEXT,
-        },
-      ],
-    });
+  const [selectedInsurance, setSelectedInsurance] = useState<string | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const [symptoms, setSymptoms] = useState("");
+  const [city, setCity] = useState("");
+
+  const { messages, append, isLoading, error, reload, stop } = useChat({
+    api: "/api/chat",
+    initialMessages: [
+      {
+        id: "welcome",
+        role: "assistant",
+        content: WELCOME_TEXT,
+      },
+    ],
+  });
 
   const scrollRef = useRef<HTMLDivElement>(null);
+  const fallbackTimer = useRef<number | null>(null);
+  const messagesRef = useRef<any[]>(messages);
+  const lastUserIdRef = useRef<string | null>(null);
+  useEffect(() => {
+    messagesRef.current = messages;
+  }, [messages]);
+
+  // Cancel fallback timer if AI assistant responded after the last user message
+  useEffect(() => {
+    if (!fallbackTimer.current) return;
+    const msgs = messagesRef.current || [];
+    const uid = lastUserIdRef.current;
+    if (!uid) return;
+    const idx = msgs.findIndex((m) => m.id === uid);
+    if (idx >= 0) {
+      const laterAssistant = msgs.slice(idx + 1).some((m) => m.role === "assistant");
+      if (laterAssistant) {
+        clearTimeout(fallbackTimer.current as number);
+        fallbackTimer.current = null;
+      }
+    }
+  }, [messages]);
+
+  // Get selected company's plans
+  const selectedCompany = (companiesData as InsuranceCompany[]).find(
+    (c) => c.id === selectedInsurance
+  );
+  const plansForCompany = selectedCompany?.plans || [];
+
+  // Get selected plan object
+  const selectedPlanObject = plansForCompany.find((p: Plan) => p.id === selectedPlan);
+
+  // Handler to submit the form
+  const handleRecommendationSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!selectedPlan || !symptoms.trim() || !city) {
+      return;
+    }
+
+    // Create a formatted message for the API
+    const userMessage = `Síntomas: ${symptoms.trim()}. Aseguradora: ${selectedCompany?.name}. Plan: ${selectedPlanObject?.name}. Ciudad: ${city}.`;
+
+    // Use the append function from useChat to add the message and mark it with an id
+    const uid = `user-${Date.now()}`;
+    lastUserIdRef.current = uid;
+    append({ id: uid, role: "user", content: userMessage });
+
+    // start fallback timer: if no assistant message appears within 3s, call /api/recommend
+    if (fallbackTimer.current) {
+      clearTimeout(fallbackTimer.current);
+    }
+    // @ts-ignore window.setTimeout returns number
+    fallbackTimer.current = window.setTimeout(async () => {
+      try {
+        const res = await fetch("/api/recommend", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: userMessage }),
+        });
+        if (res.ok) {
+          const json = await res.json();
+          if (json?.reply) {
+            // verify no assistant message already appeared after our uid
+            const msgs = messagesRef.current || [];
+            const lastIndex = msgs.findIndex((m) => m.id === uid);
+            const laterAssistant = lastIndex >= 0 && msgs.slice(lastIndex + 1).some((m) => m.role === "assistant");
+            if (!laterAssistant) {
+              append({ role: "assistant", content: json.reply });
+            }
+          }
+        }
+      } catch (err) {
+        console.warn("recommend fetch failed", err);
+      }
+    }, 3000);
+
+    // Reset form after submission
+    setSymptoms("");
+    setCity("");
+  };
 
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages, isLoading]);
-
-  function onKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      if (input.trim() && !isLoading) {
-        handleSubmit();
-      }
-    }
-  }
 
   return (
     <div className="flex flex-col flex-1 min-h-screen">
@@ -109,39 +183,58 @@ export default function Home() {
         </div>
       </main>
 
-      <form
-        onSubmit={handleSubmit}
-        className="border-t border-zinc-200 bg-white px-4 py-3"
-      >
-        <div className="max-w-2xl mx-auto flex gap-2 items-end">
-          <textarea
-            value={input}
-            onChange={handleInputChange}
-            onKeyDown={onKeyDown}
-            placeholder="Cuéntame qué te pasa…"
-            rows={1}
-            className="flex-1 resize-none rounded-2xl border border-zinc-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:border-transparent min-h-[42px] max-h-32"
-            disabled={isLoading}
-          />
-          {isLoading ? (
-            <button
-              type="button"
-              onClick={stop}
-              className="rounded-2xl bg-zinc-200 text-zinc-700 px-4 py-2.5 text-sm font-medium hover:bg-zinc-300 transition-colors shrink-0"
-            >
-              Detener
-            </button>
+      <div className="border-t border-zinc-200 bg-white px-4 py-4">
+        <div className="max-w-2xl mx-auto">
+          {!selectedInsurance ? (
+            <InsuranceSelector
+              companies={companiesData as InsuranceCompany[]}
+              selectedId={selectedInsurance}
+              onSelect={setSelectedInsurance}
+            />
+          ) : !selectedPlan ? (
+            <div className="space-y-3">
+              <button
+                onClick={() => {
+                  setSelectedInsurance(null);
+                  setSelectedPlan(null);
+                }}
+                className="text-xs text-zinc-500 hover:text-zinc-700 underline mb-2"
+              >
+                ← Cambiar aseguradora
+              </button>
+              <PlanSelector
+                plans={plansForCompany}
+                selectedId={selectedPlan}
+                onSelect={setSelectedPlan}
+              />
+            </div>
           ) : (
-            <button
-              type="submit"
-              disabled={!input.trim()}
-              className="rounded-2xl bg-zinc-900 text-white px-4 py-2.5 text-sm font-medium hover:bg-zinc-700 disabled:bg-zinc-300 disabled:cursor-not-allowed transition-colors shrink-0"
-            >
-              Enviar
-            </button>
+            <div className="space-y-3">
+              <button
+                onClick={() => setSelectedPlan(null)}
+                className="text-xs text-zinc-500 hover:text-zinc-700 underline"
+              >
+                ← Cambiar plan
+              </button>
+              <div className="bg-zinc-50 p-3 rounded-lg border border-zinc-200">
+                <p className="text-sm text-zinc-700">
+                  <span className="font-medium">Aseguradora:</span> {selectedCompany?.name}
+                  <br />
+                  <span className="font-medium">Plan:</span> {selectedPlanObject?.name}
+                </p>
+              </div>
+              <SymptomsInput
+                symptoms={symptoms}
+                city={city}
+                onSymptomsChange={setSymptoms}
+                onCityChange={setCity}
+                isLoading={isLoading}
+                onSubmit={handleRecommendationSubmit}
+              />
+            </div>
           )}
         </div>
-      </form>
+      </div>
 
       <DisclaimerBanner variant="bottom" />
     </div>

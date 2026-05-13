@@ -9,7 +9,9 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "smoke:groq": "node --env-file=.env.local scripts/smoke-test-groq.mjs"
+    "smoke:groq": "node --env-file=.env.local scripts/smoke-test-groq.mjs",
+    "generate:plans": "node scripts/generate-plans.mjs",
+    "validate:data": "node scripts/validate-data.mjs"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["esbuild"]

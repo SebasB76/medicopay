@@ -55,6 +55,8 @@ pnpm dev
 | `pnpm test` | Corre los tests con Vitest |
 | `pnpm smoke:groq` | Verifica que la API key de Groq funciona |
 | `pnpm lint` | Linter |
+| `pnpm generate:plans` | Regenera `plans.json` desde `insurance-companies.json` |
+| `pnpm validate:data` | Valida integridad de datos (planes, hospitales, especialidades) |
 
 ---
 
@@ -107,15 +109,21 @@ El backend nunca da diagnóstico médico, solo orienta a especialidad + hospital
 
 Los datos de planes y hospitales son **mock-pero-plausibles** para esta demo. Los nombres de hospitales son reales (Hospital Metropolitano, Clínica Pichincha, etc.) pero las coberturas, copagos y red de aceptación de planes son ficticios y simplificados.
 
-- 4 planes: Sanitas Plus, Salud S.A. Premier, Confiamed Familiar, IESS.
-- 10 hospitales: 5 en Quito + 5 en Guayaquil.
-- 14 especialidades + Emergencias con sus keywords.
+**Nueva estructura (v2):**
+- **8 aseguradoras** con **20 planes totales** (múltiples niveles: básico, estándar, premium).
+- **17 hospitales**: 8 en Quito + 5 en Guayaquil + 2 en Cuenca + 2 públicos (IESS).
+- **14 especialidades** + Emergencias con sus keywords.
 
-Carpetas:
+Carpetas y archivos:
+- `data/insurance-companies.json` — **Principal**: estructura de aseguradoras con planes anidados.
+- `data/plans.json` — **Generada automáticamente** desde insurance-companies.json (vista plana).
 - `data/plans/` — descripciones legibles en markdown (referencia humana).
-- `data/plans.json` — datos estructurados que usa el código.
-- `data/hospitals.json` — directorio de hospitales.
+- `data/hospitals.json` — directorio de hospitales y planes aceptados.
 - `data/specialties.json` — mapeo síntoma → especialidad.
+- `scripts/generate-plans.mjs` — script para regenerar plans.json.
+- `docs/INSURANCE-STRUCTURE.md` — documentación completa de la estructura.
+
+Ver [Estructura de Aseguradoras y Planes](./docs/INSURANCE-STRUCTURE.md) para más detalles.
 
 Reemplazar por datos reales en producción es 1-3 horas de trabajo si tuvieras acceso a la información oficial.
 
@@ -133,17 +141,97 @@ El proyecto está pensado para correr en el **Edge runtime** (cold start <1s).
 
 ---
 
-## Limitaciones conocidas (v1)
+## Limitaciones conocidas (v2)
 
-- Solo Quito y Guayaquil.
-- Solo 4 planes (datos simulados).
+- Solo 3 ciudades: Quito, Guayaquil, Cuenca.
+- 20 planes de 8 aseguradoras (datos simulados).
 - Sin geolocalización, mapas en vivo, ni reservas de turno.
 - Sin WhatsApp/voz (web chat por ahora).
 - Sin guardar conversaciones — todo en memoria del cliente.
 
 ---
 
-## Tests
+## Estructura de Datos v2: Múltiples Planes por Aseguradora
+
+### Cambios Principales
+
+Cada **aseguradora** ahora puede tener **múltiples planes** con diferentes niveles de cobertura:
+
+```json
+{
+  "id": "sanitas",
+  "name": "Sanitas",
+  "type": "private",
+  "plans": [
+    {
+      "id": "sanitas-basic",
+      "name": "Sanitas Basic",
+      "level": "basic",
+      "copays": { "general": 30, "specialist": 45, "emergency": 75 }
+    },
+    {
+      "id": "sanitas-standard",
+      "name": "Sanitas Standard",
+      "level": "standard",
+      "copays": { "general": 25, "specialist": 35, "emergency": 50 }
+    },
+    {
+      "id": "sanitas-plus",
+      "name": "Sanitas Plus",
+      "level": "premium",
+      "copays": { "general": 20, "specialist": 30, "emergency": 0 }
+    }
+  ]
+}
+```
+
+### Archivos de Datos
+
+1. **`data/insurance-companies.json`** — Archivo principal con estructura de aseguradoras y planes anidados
+2. **`data/plans.json`** — Vista plana generada automáticamente (para compatibilidad con el código)
+3. **`data/hospitals.json`** — Hospitales y planes que aceptan
+4. **`data/specialties.json`** — Mapeo síntoma → especialidad
+
+### Generar y Validar Datos
+
+```bash
+# Regenerar plans.json si editas insurance-companies.json
+pnpm generate:plans
+
+# Validar integridad de todos los datos
+pnpm validate:data
+```
+
+### Para Desarrolladores
+
+**Acceder a todos los planes de una aseguradora:**
+
+```typescript
+import companiesData from "@/data/insurance-companies.json";
+
+const sanitas = companiesData.find(c => c.id === "sanitas");
+sanitas.plans.forEach(plan => {
+  console.log(`${plan.name}: $${plan.copays.general}`);
+});
+// Output:
+// Sanitas Basic: $30
+// Sanitas Standard: $25
+// Sanitas Plus: $20
+```
+
+**Buscar un plan específico:**
+
+```typescript
+import { findPlan } from "@/lib/retrieval";
+
+const plan = findPlan("Sanitas Plus");
+console.log(plan.company_name); // "Sanitas"
+console.log(plan.level); // "premium"
+```
+
+Ver [Estructura de Aseguradoras y Planes](./docs/INSURANCE-STRUCTURE.md) y [Guía de Migración](./docs/MIGRATION-GUIDE.md) para más detalles.
+
+---
 
 ```bash
 pnpm test
