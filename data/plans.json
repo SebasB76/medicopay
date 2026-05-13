@@ -58,5 +58,65 @@
       "emergency": 0
     },
     "summary": "Seguro social público; sin copagos en hospitales IESS; tiempos de espera variables."
+  },
+  {
+    "id": "axa-premium",
+    "name": "AXA Premium",
+    "type": "private",
+    "aliases": ["axa", "axa premium", "plan axa", "axa seguros"],
+    "coverage_outpatient_pct": 85,
+    "coverage_hospitalization_pct": 95,
+    "coverage_emergency_pct": 100,
+    "copays": {
+      "general": 25,
+      "specialist": 40,
+      "emergency": 0
+    },
+    "summary": "Premium privado; cobertura total en emergencias, sin copago; acceso a red exclusiva."
+  },
+  {
+    "id": "seguros-bolivar",
+    "name": "Seguros Bolívar",
+    "type": "private",
+    "aliases": ["seguros bolivar", "bolivar", "plan bolivar", "seguros bolivar premium"],
+    "coverage_outpatient_pct": 75,
+    "coverage_hospitalization_pct": 88,
+    "coverage_emergency_pct": 95,
+    "copays": {
+      "general": 22,
+      "specialist": 32,
+      "emergency": 40
+    },
+    "summary": "Privado gama media; buena cobertura en emergencias; requiere autorización para ciertos procedimientos."
+  },
+  {
+    "id": "integra-familiar",
+    "name": "Integra Familiar",
+    "type": "private",
+    "aliases": ["integra", "integra familiar", "integra seguros", "plan integra"],
+    "coverage_outpatient_pct": 65,
+    "coverage_hospitalization_pct": 75,
+    "coverage_emergency_pct": 85,
+    "copays": {
+      "general": 15,
+      "specialist": 25,
+      "emergency": 50
+    },
+    "summary": "Privado económico; buena relación precio-cobertura; ideal para familias."
+  },
+  {
+    "id": "cajasol-cooperativa",
+    "name": "CajaSol Cooperativa",
+    "type": "cooperative",
+    "aliases": ["cajasol", "caja sol", "cajasol cooperativa", "plan cajasol"],
+    "coverage_outpatient_pct": 70,
+    "coverage_hospitalization_pct": 80,
+    "coverage_emergency_pct": 90,
+    "copays": {
+      "general": 10,
+      "specialist": 20,
+      "emergency": 35
+    },
+    "summary": "Cooperativa de seguros; beneficios especiales para afiliados; tasa de cobro reducida."
   }
 ]
