@@ -1,0 +1,236 @@
+[
+  {
+    "specialty": "Emergencias",
+    "is_emergency": true,
+    "keywords": [
+      "emergencia",
+      "dolor de pecho",
+      "dolor en el pecho",
+      "no puedo respirar",
+      "dificultad para respirar",
+      "dificultad respirar",
+      "sangrado abundante",
+      "sangro mucho",
+      "desmayo",
+      "me desmaye",
+      "convulsion",
+      "convulsiones",
+      "ataque",
+      "accidente de transito",
+      "accidente grave",
+      "fractura expuesta",
+      "perdida de conocimiento",
+      "vision doble repentina",
+      "paralisis subita"
+    ]
+  },
+  {
+    "specialty": "Pediatría",
+    "is_emergency": false,
+    "keywords": [
+      "mi hijo",
+      "mi hija",
+      "mi bebe",
+      "mi nino",
+      "mi nina",
+      "niño",
+      "nino enfermo",
+      "fiebre del nino",
+      "vacunas",
+      "control del nino",
+      "pediatra"
+    ]
+  },
+  {
+    "specialty": "Cardiología",
+    "is_emergency": false,
+    "keywords": [
+      "palpitaciones",
+      "presion alta",
+      "hipertension",
+      "presion arterial",
+      "corazon acelerado",
+      "soplo cardiaco",
+      "arritmia",
+      "infarto previo",
+      "colesterol alto"
+    ]
+  },
+  {
+    "specialty": "Ginecología",
+    "is_emergency": false,
+    "keywords": [
+      "menstruacion",
+      "regla irregular",
+      "dolor pelvico",
+      "dolor pelvica",
+      "embarazo",
+      "estoy embarazada",
+      "control prenatal",
+      "anticonceptivos",
+      "pastilla anticonceptiva",
+      "papanicolaou",
+      "ginecologo",
+      "ginecologa",
+      "menopausia"
+    ]
+  },
+  {
+    "specialty": "Traumatología",
+    "is_emergency": false,
+    "keywords": [
+      "fractura",
+      "me fracture",
+      "esguince",
+      "torcedura",
+      "dolor de espalda",
+      "dolor lumbar",
+      "dolor articular",
+      "dolor de rodilla",
+      "dolor en el hombro",
+      "dolor de cadera",
+      "hernia discal"
+    ]
+  },
+  {
+    "specialty": "Dermatología",
+    "is_emergency": false,
+    "keywords": [
+      "acne",
+      "espinillas",
+      "alergia en la piel",
+      "manchas en la piel",
+      "sarpullido",
+      "picazon",
+      "comezon",
+      "lunar sospechoso",
+      "rash",
+      "dermatitis"
+    ]
+  },
+  {
+    "specialty": "Gastroenterología",
+    "is_emergency": false,
+    "keywords": [
+      "dolor de estomago",
+      "dolor estomacal",
+      "diarrea",
+      "nauseas",
+      "vomito",
+      "acidez",
+      "indigestion",
+      "reflujo",
+      "gastritis",
+      "ulcera",
+      "colon irritable",
+      "estrenimiento"
+    ]
+  },
+  {
+    "specialty": "Neurología",
+    "is_emergency": false,
+    "keywords": [
+      "migrana",
+      "migrañas",
+      "dolor de cabeza fuerte",
+      "dolor de cabeza cronico",
+      "cefalea",
+      "mareo",
+      "vertigo",
+      "hormigueo",
+      "entumecimiento",
+      "epilepsia"
+    ]
+  },
+  {
+    "specialty": "Oftalmología",
+    "is_emergency": false,
+    "keywords": [
+      "vision borrosa",
+      "no veo bien",
+      "dolor de ojo",
+      "ojo rojo",
+      "cataratas",
+      "miopia",
+      "astigmatismo",
+      "lentes",
+      "anteojos",
+      "examen visual"
+    ]
+  },
+  {
+    "specialty": "Otorrinolaringología",
+    "is_emergency": false,
+    "keywords": [
+      "dolor de oido",
+      "infeccion de oido",
+      "sinusitis",
+      "amigdalitis",
+      "ronquera",
+      "afonia",
+      "perdida de audicion"
+    ]
+  },
+  {
+    "specialty": "Endocrinología",
+    "is_emergency": false,
+    "keywords": [
+      "diabetes",
+      "azucar alta",
+      "azucar baja",
+      "tiroides",
+      "hipotiroidismo",
+      "hipertiroidismo",
+      "sobrepeso",
+      "obesidad",
+      "fatiga cronica"
+    ]
+  },
+  {
+    "specialty": "Urología",
+    "is_emergency": false,
+    "keywords": [
+      "infeccion urinaria",
+      "ardor al orinar",
+      "prostata",
+      "calculos renales",
+      "calculos en el rinon",
+      "piedras en el rinon",
+      "incontinencia"
+    ]
+  },
+  {
+    "specialty": "Psiquiatría",
+    "is_emergency": false,
+    "keywords": [
+      "ansiedad",
+      "depresion",
+      "estoy triste",
+      "insomnio",
+      "no puedo dormir",
+      "ataque de panico",
+      "estres cronico",
+      "psicologo",
+      "psiquiatra",
+      "salud mental"
+    ]
+  },
+  {
+    "specialty": "Medicina General",
+    "is_emergency": false,
+    "keywords": [
+      "fiebre",
+      "tos",
+      "gripe",
+      "resfriado",
+      "dolor de garganta",
+      "cansancio",
+      "malestar general",
+      "chequeo",
+      "control medico",
+      "dolor de cabeza",
+      "moco",
+      "congestion"
+    ]
+  }
+]

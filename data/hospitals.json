@@ -1,0 +1,211 @@
+[
+  {
+    "id": "metropolitano-quito",
+    "name": "Hospital Metropolitano",
+    "city": "Quito",
+    "address": "Av. Mariana de Jesús s/n y Occidental",
+    "phone": "(02) 399-8000",
+    "specialties": [
+      "Medicina General",
+      "Emergencias",
+      "Cardiología",
+      "Ginecología",
+      "Pediatría",
+      "Traumatología",
+      "Dermatología",
+      "Gastroenterología",
+      "Neurología",
+      "Oftalmología"
+    ],
+    "accepted_plans": ["sanitas-plus", "salud-sa-premier"],
+    "copay_modifier": 1.2,
+    "tier": "premium"
+  },
+  {
+    "id": "pichincha-quito",
+    "name": "Clínica Pichincha",
+    "city": "Quito",
+    "address": "Veintimilla E3-30 y Páez",
+    "phone": "(02) 299-8500",
+    "specialties": [
+      "Medicina General",
+      "Emergencias",
+      "Cardiología",
+      "Ginecología",
+      "Pediatría",
+      "Traumatología",
+      "Gastroenterología",
+      "Endocrinología",
+      "Otorrinolaringología"
+    ],
+    "accepted_plans": ["sanitas-plus", "salud-sa-premier", "confiamed-familiar"],
+    "copay_modifier": 1.0,
+    "tier": "standard"
+  },
+  {
+    "id": "vozandes-quito",
+    "name": "Hospital Vozandes",
+    "city": "Quito",
+    "address": "Villalengua Oe2-37 y Av. 10 de Agosto",
+    "phone": "(02) 226-2142",
+    "specialties": [
+      "Medicina General",
+      "Emergencias",
+      "Pediatría",
+      "Ginecología",
+      "Traumatología",
+      "Oftalmología",
+      "Psiquiatría"
+    ],
+    "accepted_plans": ["sanitas-plus"],
+    "copay_modifier": 1.1,
+    "tier": "standard"
+  },
+  {
+    "id": "valles-quito",
+    "name": "Hospital de los Valles",
+    "city": "Quito",
+    "address": "Av. Interoceánica Km 12.5, Cumbayá",
+    "phone": "(02) 297-7900",
+    "specialties": [
+      "Medicina General",
+      "Emergencias",
+      "Cardiología",
+      "Pediatría",
+      "Ginecología",
+      "Traumatología",
+      "Dermatología",
+      "Neurología"
+    ],
+    "accepted_plans": ["salud-sa-premier", "confiamed-familiar"],
+    "copay_modifier": 1.0,
+    "tier": "standard"
+  },
+  {
+    "id": "carlos-andrade-marin-quito",
+    "name": "Hospital Carlos Andrade Marín (IESS)",
+    "city": "Quito",
+    "address": "Av. 18 de Septiembre y Ayacucho",
+    "phone": "(02) 256-2408",
+    "specialties": [
+      "Medicina General",
+      "Emergencias",
+      "Cardiología",
+      "Ginecología",
+      "Pediatría",
+      "Traumatología",
+      "Neurología",
+      "Endocrinología",
+      "Urología",
+      "Oftalmología",
+      "Otorrinolaringología",
+      "Psiquiatría"
+    ],
+    "accepted_plans": ["iess"],
+    "copay_modifier": 1.0,
+    "tier": "public"
+  },
+  {
+    "id": "kennedy-guayaquil",
+    "name": "Hospital Kennedy",
+    "city": "Guayaquil",
+    "address": "Av. del Periodista y Calle 9na",
+    "phone": "(04) 228-6963",
+    "specialties": [
+      "Medicina General",
+      "Emergencias",
+      "Cardiología",
+      "Ginecología",
+      "Pediatría",
+      "Traumatología",
+      "Dermatología",
+      "Gastroenterología",
+      "Neurología",
+      "Oftalmología"
+    ],
+    "accepted_plans": ["sanitas-plus", "salud-sa-premier"],
+    "copay_modifier": 1.2,
+    "tier": "premium"
+  },
+  {
+    "id": "alcivar-guayaquil",
+    "name": "Clínica Alcívar",
+    "city": "Guayaquil",
+    "address": "Coronel 2301 y Azuay",
+    "phone": "(04) 372-0100",
+    "specialties": [
+      "Medicina General",
+      "Emergencias",
+      "Cardiología",
+      "Ginecología",
+      "Pediatría",
+      "Traumatología",
+      "Gastroenterología",
+      "Endocrinología"
+    ],
+    "accepted_plans": ["sanitas-plus", "confiamed-familiar"],
+    "copay_modifier": 1.1,
+    "tier": "standard"
+  },
+  {
+    "id": "omni-guayaquil",
+    "name": "Omni Hospital",
+    "city": "Guayaquil",
+    "address": "Av. Plaza Dañín y Democracia",
+    "phone": "(04) 269-9999",
+    "specialties": [
+      "Medicina General",
+      "Emergencias",
+      "Pediatría",
+      "Ginecología",
+      "Traumatología",
+      "Oftalmología",
+      "Otorrinolaringología"
+    ],
+    "accepted_plans": ["salud-sa-premier", "confiamed-familiar"],
+    "copay_modifier": 1.0,
+    "tier": "standard"
+  },
+  {
+    "id": "teodoro-maldonado-guayaquil",
+    "name": "Hospital Teodoro Maldonado Carbo (IESS)",
+    "city": "Guayaquil",
+    "address": "Av. 25 de Julio y Av. Ernesto Albán",
+    "phone": "(04) 200-0700",
+    "specialties": [
+      "Medicina General",
+      "Emergencias",
+      "Cardiología",
+      "Ginecología",
+      "Pediatría",
+      "Traumatología",
+      "Neurología",
+      "Endocrinología",
+      "Urología",
+      "Oftalmología",
+      "Psiquiatría"
+    ],
+    "accepted_plans": ["iess"],
+    "copay_modifier": 1.0,
+    "tier": "public"
+  },
+  {
+    "id": "universitario-guayaquil",
+    "name": "Hospital Universitario",
+    "city": "Guayaquil",
+    "address": "Av. Kennedy s/n y Av. Delta",
+    "phone": "(04) 229-7202",
+    "specialties": [
+      "Medicina General",
+      "Emergencias",
+      "Pediatría",
+      "Ginecología",
+      "Traumatología",
+      "Dermatología",
+      "Psiquiatría"
+    ],
+    "accepted_plans": ["confiamed-familiar"],
+    "copay_modifier": 0.9,
+    "tier": "standard"
+  }
+]

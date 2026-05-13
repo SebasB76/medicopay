@@ -1,0 +1,62 @@
+[
+  {
+    "id": "sanitas-plus",
+    "name": "Sanitas Plus",
+    "type": "private",
+    "aliases": ["sanitas", "sanitas plus", "plan sanitas", "sanitas premium"],
+    "coverage_outpatient_pct": 80,
+    "coverage_hospitalization_pct": 90,
+    "coverage_emergency_pct": 100,
+    "copays": {
+      "general": 25,
+      "specialist": 35,
+      "emergency": 50
+    },
+    "summary": "Premium privado; cobertura amplia, sin autorización previa para consultas externas."
+  },
+  {
+    "id": "salud-sa-premier",
+    "name": "Salud S.A. Premier",
+    "type": "private",
+    "aliases": ["salud sa", "salud s.a.", "salud premier", "salud s.a. premier"],
+    "coverage_outpatient_pct": 70,
+    "coverage_hospitalization_pct": 85,
+    "coverage_emergency_pct": 90,
+    "copays": {
+      "general": 20,
+      "specialist": 30,
+      "emergency": 45
+    },
+    "summary": "Privado gama media; requiere autorización previa para hospitalización programada."
+  },
+  {
+    "id": "confiamed-familiar",
+    "name": "Confiamed Familiar",
+    "type": "private",
+    "aliases": ["confiamed", "confiamed familiar", "confia med"],
+    "coverage_outpatient_pct": 60,
+    "coverage_hospitalization_pct": 70,
+    "coverage_emergency_pct": 75,
+    "copays": {
+      "general": 18,
+      "specialist": 28,
+      "emergency": 55
+    },
+    "summary": "Privado familiar; copagos preferenciales en Pediatría."
+  },
+  {
+    "id": "iess",
+    "name": "IESS",
+    "type": "public",
+    "aliases": ["iess", "seguro social", "instituto de seguridad social", "seguro publico"],
+    "coverage_outpatient_pct": 100,
+    "coverage_hospitalization_pct": 100,
+    "coverage_emergency_pct": 100,
+    "copays": {
+      "general": 0,
+      "specialist": 0,
+      "emergency": 0
+    },
+    "summary": "Seguro social público; sin copagos en hospitales IESS; tiempos de espera variables."
+  }
+]
