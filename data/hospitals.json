@@ -15,7 +15,8 @@
       "Dermatología",
       "Gastroenterología",
       "Neurología",
-      "Oftalmología"
+      "Oftalmología",
+      "Oncología"
     ],
     "accepted_plans": ["sanitas-plus", "salud-sa-premier"],
     "copay_modifier": 1.2,
@@ -99,7 +100,8 @@
       "Urología",
       "Oftalmología",
       "Otorrinolaringología",
-      "Psiquiatría"
+      "Psiquiatría",
+      "Oncología"
     ],
     "accepted_plans": ["iess"],
     "copay_modifier": 1.0,
@@ -121,7 +123,8 @@
       "Dermatología",
       "Gastroenterología",
       "Neurología",
-      "Oftalmología"
+      "Oftalmología",
+      "Oncología"
     ],
     "accepted_plans": ["sanitas-plus", "salud-sa-premier"],
     "copay_modifier": 1.2,
@@ -183,7 +186,8 @@
       "Endocrinología",
       "Urología",
       "Oftalmología",
-      "Psiquiatría"
+      "Psiquiatría",
+      "Oncología"
     ],
     "accepted_plans": ["iess"],
     "copay_modifier": 1.0,
