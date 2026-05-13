@@ -20,12 +20,21 @@
       "convulsion",
       "convulsiones",
       "ataque",
+      "ataque cardiaco",
+      "ataque al corazon",
+      "infarto",
+      "derrame cerebral",
+      "accidente cerebrovascular",
+      "acv",
       "accidente de transito",
       "accidente grave",
       "fractura expuesta",
       "perdida de conocimiento",
       "vision doble repentina",
-      "paralisis subita"
+      "paralisis subita",
+      "intoxicacion grave",
+      "envenenamiento",
+      "quemadura grave"
     ]
   },
   {
@@ -37,12 +46,18 @@
       "mi bebe",
       "mi nino",
       "mi nina",
+      "mi pequeno",
+      "mi pequena",
       "niño",
       "nino enfermo",
+      "bebe enfermo",
       "fiebre del nino",
+      "fiebre del bebe",
       "vacunas",
+      "vacuna del nino",
       "control del nino",
-      "pediatra"
+      "pediatra",
+      "pediatrico"
     ]
   },
   {
@@ -51,13 +66,22 @@
     "keywords": [
       "palpitaciones",
       "presion alta",
+      "presion baja",
       "hipertension",
+      "hipotension",
       "presion arterial",
       "corazon acelerado",
       "soplo cardiaco",
       "arritmia",
       "infarto previo",
-      "colesterol alto"
+      "angina",
+      "angina de pecho",
+      "marcapasos",
+      "insuficiencia cardiaca",
+      "falla cardiaca",
+      "colesterol alto",
+      "trigliceridos altos",
+      "cardiologo"
     ]
   },
   {
@@ -76,7 +100,12 @@
       "papanicolaou",
       "ginecologo",
       "ginecologa",
-      "menopausia"
+      "menopausia",
+      "miomas",
+      "quiste ovarico",
+      "endometriosis",
+      "sangrado vaginal",
+      "flujo vaginal"
     ]
   },
   {
@@ -89,11 +118,18 @@
       "torcedura",
       "dolor de espalda",
       "dolor lumbar",
+      "lumbago",
+      "dolor de cuello",
+      "torticolis",
       "dolor articular",
       "dolor de rodilla",
       "dolor en el hombro",
       "dolor de cadera",
-      "hernia discal"
+      "hernia discal",
+      "luxacion",
+      "tendinitis",
+      "artritis",
+      "artrosis"
     ]
   },
   {
@@ -103,13 +139,24 @@
       "acne",
       "espinillas",
       "alergia en la piel",
+      "alergia cutanea",
       "manchas en la piel",
       "sarpullido",
       "picazon",
       "comezon",
       "lunar sospechoso",
       "rash",
-      "dermatitis"
+      "dermatitis",
+      "psoriasis",
+      "eccema",
+      "eczema",
+      "urticaria",
+      "vitiligo",
+      "caida del cabello",
+      "perdida del cabello",
+      "caspa",
+      "verrugas",
+      "hongos en la piel"
     ]
   },
   {
@@ -127,7 +174,15 @@
       "gastritis",
       "ulcera",
       "colon irritable",
-      "estrenimiento"
+      "estrenimiento",
+      "estrenido",
+      "hepatitis",
+      "colitis",
+      "hemorroides",
+      "intolerancia alimentaria",
+      "intolerancia a la lactosa",
+      "celiaco",
+      "celiaquia"
     ]
   },
   {
@@ -143,7 +198,14 @@
       "vertigo",
       "hormigueo",
       "entumecimiento",
-      "epilepsia"
+      "epilepsia",
+      "alzheimer",
+      "parkinson",
+      "demencia",
+      "esclerosis multiple",
+      "neuropatia",
+      "tics nerviosos",
+      "temblor en las manos"
     ]
   },
   {
@@ -157,9 +219,15 @@
       "cataratas",
       "miopia",
       "astigmatismo",
+      "hipermetropia",
+      "presbicia",
       "lentes",
       "anteojos",
-      "examen visual"
+      "examen visual",
+      "glaucoma",
+      "conjuntivitis",
+      "orzuelo",
+      "ojo seco"
     ]
   },
   {
@@ -168,11 +236,18 @@
     "keywords": [
       "dolor de oido",
       "infeccion de oido",
+      "otitis",
       "sinusitis",
       "amigdalitis",
       "ronquera",
       "afonia",
-      "perdida de audicion"
+      "perdida de audicion",
+      "tinnitus",
+      "zumbido en los oidos",
+      "zumbido en el oido",
+      "sangrado nasal",
+      "sangrado de la nariz",
+      "tapon de cera"
     ]
   },
   {
@@ -180,14 +255,24 @@
     "is_emergency": false,
     "keywords": [
       "diabetes",
+      "diabetes tipo 1",
+      "diabetes tipo 2",
+      "diabetico",
+      "prediabetes",
       "azucar alta",
       "azucar baja",
+      "glucosa alta",
+      "glucosa baja",
+      "azucar en sangre",
+      "insulina",
       "tiroides",
       "hipotiroidismo",
       "hipertiroidismo",
+      "nodulo tiroideo",
       "sobrepeso",
       "obesidad",
-      "fatiga cronica"
+      "fatiga cronica",
+      "sindrome metabolico"
     ]
   },
   {
@@ -200,7 +285,13 @@
       "calculos renales",
       "calculos en el rinon",
       "piedras en el rinon",
-      "incontinencia"
+      "incontinencia",
+      "incontinencia urinaria",
+      "impotencia",
+      "disfuncion erectil",
+      "eyaculacion precoz",
+      "varicocele",
+      "sangre en la orina"
     ]
   },
   {
@@ -213,10 +304,49 @@
       "insomnio",
       "no puedo dormir",
       "ataque de panico",
+      "ataques de panico",
       "estres cronico",
       "psicologo",
       "psiquiatra",
-      "salud mental"
+      "salud mental",
+      "bipolar",
+      "trastorno bipolar",
+      "tdah",
+      "deficit de atencion",
+      "esquizofrenia",
+      "fobia",
+      "fobia social",
+      "trastorno alimenticio",
+      "anorexia",
+      "bulimia",
+      "terapia"
+    ]
+  },
+  {
+    "specialty": "Oncología",
+    "is_emergency": false,
+    "keywords": [
+      "cancer",
+      "tumor",
+      "tumor maligno",
+      "tumor benigno",
+      "quimio",
+      "quimioterapia",
+      "radioterapia",
+      "metastasis",
+      "leucemia",
+      "linfoma",
+      "mieloma",
+      "cancer de mama",
+      "cancer de pecho",
+      "cancer de pulmon",
+      "cancer de prostata",
+      "cancer de colon",
+      "cancer de piel",
+      "melanoma",
+      "biopsia",
+      "oncologo",
+      "oncologa"
     ]
   },
   {
@@ -234,7 +364,10 @@
       "control medico",
       "dolor de cabeza",
       "moco",
-      "congestion"
+      "congestion",
+      "alergia",
+      "estornudos",
+      "fatiga"
     ]
   }
 ]

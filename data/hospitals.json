@@ -15,7 +15,8 @@
       "Dermatología",
       "Gastroenterología",
       "Neurología",
-      "Oftalmología"
+      "Oftalmología",
+      "Oncología"
     ],
     "accepted_plans": [
       "sanitas-plus",
@@ -141,7 +142,8 @@
       "Urología",
       "Oftalmología",
       "Otorrinolaringología",
-      "Psiquiatría"
+      "Psiquiatría",
+      "Oncología"
     ],
     "accepted_plans": [
       "iess-afiliado"
@@ -249,7 +251,8 @@
       "Dermatología",
       "Gastroenterología",
       "Neurología",
-      "Oftalmología"
+      "Oftalmología",
+      "Oncología"
     ],
     "accepted_plans": [
       "sanitas-plus",
@@ -339,7 +342,8 @@
       "Endocrinología",
       "Urología",
       "Oftalmología",
-      "Psiquiatría"
+      "Psiquiatría",
+      "Oncología"
     ],
     "accepted_plans": [
       "iess-afiliado"

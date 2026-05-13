@@ -1,14 +1,11 @@
 import type { NextConfig } from "next";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    root: __dirname,
-  },
+  // Note: Next emits a warning about multiple lockfiles (a stray
+  // ~/package-lock.json on this machine). Harmless. We don't pin
+  // turbopack.root here because doing so via import.meta.url forces
+  // ESM output and breaks the config loader. See:
+  // https://nextjs.org/docs/messages/next-config-error
 };
 
 export default nextConfig;
