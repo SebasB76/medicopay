@@ -32,7 +32,9 @@ export function ChatMessage({ message }: { message: Message }) {
         {hasText && (
           <div
             className={`rounded-2xl px-4 py-2.5 text-sm whitespace-pre-wrap leading-relaxed ${
-              isUser ? "bg-zinc-900 text-white" : "bg-zinc-100 text-zinc-900"
+              isUser
+                ? "border border-cyan-200 bg-cyan-50 text-zinc-900"
+                : "bg-zinc-100 text-zinc-900"
             }`}
           >
             {message.content}

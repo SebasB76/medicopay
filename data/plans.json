@@ -1,24 +1,100 @@
 [
   {
-    "id": "sanitas-plus",
-    "name": "Sanitas Plus",
-    "type": "private",
-    "aliases": ["sanitas", "sanitas plus", "plan sanitas", "sanitas premium"],
-    "coverage_outpatient_pct": 80,
-    "coverage_hospitalization_pct": 90,
-    "coverage_emergency_pct": 100,
+    "id": "sanitas-basic",
+    "name": "Sanitas Basic",
+    "level": "basic",
+    "coverage_outpatient_pct": 60,
+    "coverage_hospitalization_pct": 75,
+    "coverage_emergency_pct": 85,
+    "copays": {
+      "general": 30,
+      "specialist": 45,
+      "emergency": 75
+    },
+    "summary": "Plan básico; cobertura limitada, requiere autorización previa para muchos servicios.",
+    "company_id": "sanitas",
+    "company_name": "Sanitas",
+    "company_type": "private",
+    "aliases": [
+      "sanitas basic",
+      "sanitas-basic",
+      "sanitas",
+      "sanitas sanitas basic"
+    ]
+  },
+  {
+    "id": "sanitas-standard",
+    "name": "Sanitas Standard",
+    "level": "standard",
+    "coverage_outpatient_pct": 70,
+    "coverage_hospitalization_pct": 85,
+    "coverage_emergency_pct": 90,
     "copays": {
       "general": 25,
       "specialist": 35,
       "emergency": 50
     },
-    "summary": "Premium privado; cobertura amplia, sin autorización previa para consultas externas."
+    "summary": "Plan estándar; buena cobertura sin autorización previa para consultas externas.",
+    "company_id": "sanitas",
+    "company_name": "Sanitas",
+    "company_type": "private",
+    "aliases": [
+      "sanitas standard",
+      "sanitas-standard",
+      "sanitas",
+      "sanitas sanitas standard"
+    ]
+  },
+  {
+    "id": "sanitas-plus",
+    "name": "Sanitas Plus",
+    "level": "premium",
+    "coverage_outpatient_pct": 85,
+    "coverage_hospitalization_pct": 95,
+    "coverage_emergency_pct": 100,
+    "copays": {
+      "general": 20,
+      "specialist": 30,
+      "emergency": 0
+    },
+    "summary": "Plan premium; cobertura amplia, sin copago en emergencias, acceso a red exclusiva.",
+    "company_id": "sanitas",
+    "company_name": "Sanitas",
+    "company_type": "private",
+    "aliases": [
+      "sanitas plus",
+      "sanitas-plus",
+      "sanitas",
+      "sanitas sanitas plus"
+    ]
+  },
+  {
+    "id": "salud-sa-essential",
+    "name": "Salud S.A. Essential",
+    "level": "basic",
+    "coverage_outpatient_pct": 55,
+    "coverage_hospitalization_pct": 70,
+    "coverage_emergency_pct": 80,
+    "copays": {
+      "general": 25,
+      "specialist": 40,
+      "emergency": 60
+    },
+    "summary": "Plan essential; cobertura básica, requiere autorización previa para hospitalización.",
+    "company_id": "salud-sa",
+    "company_name": "Salud S.A.",
+    "company_type": "private",
+    "aliases": [
+      "salud s.a. essential",
+      "salud-sa-essential",
+      "salud s.a.",
+      "salud s.a. salud s.a. essential"
+    ]
   },
   {
     "id": "salud-sa-premier",
     "name": "Salud S.A. Premier",
-    "type": "private",
-    "aliases": ["salud sa", "salud s.a.", "salud premier", "salud s.a. premier"],
+    "level": "standard",
     "coverage_outpatient_pct": 70,
     "coverage_hospitalization_pct": 85,
     "coverage_emergency_pct": 90,
@@ -27,13 +103,44 @@
       "specialist": 30,
       "emergency": 45
     },
-    "summary": "Privado gama media; requiere autorización previa para hospitalización programada."
+    "summary": "Plan premier; buena cobertura, requiere autorización para procedimientos programados.",
+    "company_id": "salud-sa",
+    "company_name": "Salud S.A.",
+    "company_type": "private",
+    "aliases": [
+      "salud s.a. premier",
+      "salud-sa-premier",
+      "salud s.a.",
+      "salud s.a. salud s.a. premier"
+    ]
+  },
+  {
+    "id": "salud-sa-platinum",
+    "name": "Salud S.A. Platinum",
+    "level": "premium",
+    "coverage_outpatient_pct": 80,
+    "coverage_hospitalization_pct": 92,
+    "coverage_emergency_pct": 100,
+    "copays": {
+      "general": 15,
+      "specialist": 25,
+      "emergency": 0
+    },
+    "summary": "Plan platinum; cobertura superior con beneficios adicionales.",
+    "company_id": "salud-sa",
+    "company_name": "Salud S.A.",
+    "company_type": "private",
+    "aliases": [
+      "salud s.a. platinum",
+      "salud-sa-platinum",
+      "salud s.a.",
+      "salud s.a. salud s.a. platinum"
+    ]
   },
   {
     "id": "confiamed-familiar",
     "name": "Confiamed Familiar",
-    "type": "private",
-    "aliases": ["confiamed", "confiamed familiar", "confia med"],
+    "level": "standard",
     "coverage_outpatient_pct": 60,
     "coverage_hospitalization_pct": 70,
     "coverage_emergency_pct": 75,
@@ -42,13 +149,44 @@
       "specialist": 28,
       "emergency": 55
     },
-    "summary": "Privado familiar; copagos preferenciales en Pediatría."
+    "summary": "Plan familiar; copagos preferenciales en Pediatría, ideal para familias.",
+    "company_id": "confiamed",
+    "company_name": "Confiamed",
+    "company_type": "private",
+    "aliases": [
+      "confiamed familiar",
+      "confiamed-familiar",
+      "confiamed",
+      "confiamed confiamed familiar"
+    ]
   },
   {
-    "id": "iess",
-    "name": "IESS",
-    "type": "public",
-    "aliases": ["iess", "seguro social", "instituto de seguridad social", "seguro publico"],
+    "id": "confiamed-premium-familia",
+    "name": "Confiamed Premium Familia",
+    "level": "premium",
+    "coverage_outpatient_pct": 75,
+    "coverage_hospitalization_pct": 85,
+    "coverage_emergency_pct": 90,
+    "copays": {
+      "general": 15,
+      "specialist": 25,
+      "emergency": 40
+    },
+    "summary": "Plan premium familiar; mayor cobertura con beneficios especiales para niños.",
+    "company_id": "confiamed",
+    "company_name": "Confiamed",
+    "company_type": "private",
+    "aliases": [
+      "confiamed premium familia",
+      "confiamed-premium-familia",
+      "confiamed",
+      "confiamed confiamed premium familia"
+    ]
+  },
+  {
+    "id": "iess-afiliado",
+    "name": "IESS Afiliado",
+    "level": "standard",
     "coverage_outpatient_pct": 100,
     "coverage_hospitalization_pct": 100,
     "coverage_emergency_pct": 100,
@@ -57,6 +195,268 @@
       "specialist": 0,
       "emergency": 0
     },
-    "summary": "Seguro social público; sin copagos en hospitales IESS; tiempos de espera variables."
+    "summary": "Cobertura pública para afiliados; sin copagos pero con tiempos de espera variables.",
+    "company_id": "iess",
+    "company_name": "IESS",
+    "company_type": "public",
+    "aliases": [
+      "iess afiliado",
+      "iess-afiliado",
+      "iess",
+      "iess iess afiliado"
+    ]
+  },
+  {
+    "id": "axa-protect",
+    "name": "AXA Protect",
+    "level": "standard",
+    "coverage_outpatient_pct": 75,
+    "coverage_hospitalization_pct": 88,
+    "coverage_emergency_pct": 95,
+    "copays": {
+      "general": 28,
+      "specialist": 38,
+      "emergency": 25
+    },
+    "summary": "Plan estándar; buena cobertura en emergencias, red médica amplia.",
+    "company_id": "axa",
+    "company_name": "AXA",
+    "company_type": "private",
+    "aliases": [
+      "axa protect",
+      "axa-protect",
+      "axa",
+      "axa axa protect"
+    ]
+  },
+  {
+    "id": "axa-premium",
+    "name": "AXA Premium",
+    "level": "premium",
+    "coverage_outpatient_pct": 85,
+    "coverage_hospitalization_pct": 95,
+    "coverage_emergency_pct": 100,
+    "copays": {
+      "general": 25,
+      "specialist": 40,
+      "emergency": 0
+    },
+    "summary": "Plan premium; cobertura total en emergencias, sin copago; acceso a red exclusiva.",
+    "company_id": "axa",
+    "company_name": "AXA",
+    "company_type": "private",
+    "aliases": [
+      "axa premium",
+      "axa-premium",
+      "axa",
+      "axa axa premium"
+    ]
+  },
+  {
+    "id": "bolivar-flex",
+    "name": "Bolívar Flex",
+    "level": "basic",
+    "coverage_outpatient_pct": 65,
+    "coverage_hospitalization_pct": 78,
+    "coverage_emergency_pct": 85,
+    "copays": {
+      "general": 25,
+      "specialist": 35,
+      "emergency": 55
+    },
+    "summary": "Plan flexible; opciones de copagos variables según necesidad.",
+    "company_id": "seguros-bolivar",
+    "company_name": "Seguros Bolívar",
+    "company_type": "private",
+    "aliases": [
+      "bolívar flex",
+      "bolivar-flex",
+      "seguros bolívar",
+      "seguros bolívar bolívar flex"
+    ]
+  },
+  {
+    "id": "seguros-bolivar",
+    "name": "Seguros Bolívar Estándar",
+    "level": "standard",
+    "coverage_outpatient_pct": 75,
+    "coverage_hospitalization_pct": 88,
+    "coverage_emergency_pct": 95,
+    "copays": {
+      "general": 22,
+      "specialist": 32,
+      "emergency": 40
+    },
+    "summary": "Plan estándar; buena cobertura en emergencias, requiere autorización para ciertos procedimientos.",
+    "company_id": "seguros-bolivar",
+    "company_name": "Seguros Bolívar",
+    "company_type": "private",
+    "aliases": [
+      "seguros bolívar estándar",
+      "seguros-bolivar",
+      "seguros bolívar",
+      "seguros bolívar seguros bolívar estándar"
+    ]
+  },
+  {
+    "id": "bolivar-elite",
+    "name": "Bolívar Elite",
+    "level": "premium",
+    "coverage_outpatient_pct": 82,
+    "coverage_hospitalization_pct": 92,
+    "coverage_emergency_pct": 100,
+    "copays": {
+      "general": 20,
+      "specialist": 30,
+      "emergency": 0
+    },
+    "summary": "Plan elite; cobertura superior con beneficios adicionales.",
+    "company_id": "seguros-bolivar",
+    "company_name": "Seguros Bolívar",
+    "company_type": "private",
+    "aliases": [
+      "bolívar elite",
+      "bolivar-elite",
+      "seguros bolívar",
+      "seguros bolívar bolívar elite"
+    ]
+  },
+  {
+    "id": "integra-basic",
+    "name": "Integra Basic",
+    "level": "basic",
+    "coverage_outpatient_pct": 50,
+    "coverage_hospitalization_pct": 65,
+    "coverage_emergency_pct": 75,
+    "copays": {
+      "general": 18,
+      "specialist": 30,
+      "emergency": 60
+    },
+    "summary": "Plan básico económico; cobertura limitada, ideal para presupuestos ajustados.",
+    "company_id": "integra",
+    "company_name": "Integra",
+    "company_type": "private",
+    "aliases": [
+      "integra basic",
+      "integra-basic",
+      "integra",
+      "integra integra basic"
+    ]
+  },
+  {
+    "id": "integra-familiar",
+    "name": "Integra Familiar",
+    "level": "standard",
+    "coverage_outpatient_pct": 65,
+    "coverage_hospitalization_pct": 75,
+    "coverage_emergency_pct": 85,
+    "copays": {
+      "general": 15,
+      "specialist": 25,
+      "emergency": 50
+    },
+    "summary": "Plan familiar; buena relación precio-cobertura, descuentos especiales en pediatría.",
+    "company_id": "integra",
+    "company_name": "Integra",
+    "company_type": "private",
+    "aliases": [
+      "integra familiar",
+      "integra-familiar",
+      "integra",
+      "integra integra familiar"
+    ]
+  },
+  {
+    "id": "integra-premium",
+    "name": "Integra Premium Familia",
+    "level": "premium",
+    "coverage_outpatient_pct": 78,
+    "coverage_hospitalization_pct": 88,
+    "coverage_emergency_pct": 95,
+    "copays": {
+      "general": 12,
+      "specialist": 22,
+      "emergency": 35
+    },
+    "summary": "Plan premium familiar; máxima cobertura con beneficios especiales.",
+    "company_id": "integra",
+    "company_name": "Integra",
+    "company_type": "private",
+    "aliases": [
+      "integra premium familia",
+      "integra-premium",
+      "integra",
+      "integra integra premium familia"
+    ]
+  },
+  {
+    "id": "cajasol-essential",
+    "name": "CajaSol Essential",
+    "level": "basic",
+    "coverage_outpatient_pct": 60,
+    "coverage_hospitalization_pct": 72,
+    "coverage_emergency_pct": 80,
+    "copays": {
+      "general": 12,
+      "specialist": 22,
+      "emergency": 45
+    },
+    "summary": "Plan esencial; copagos muy bajos, beneficios especiales para cooperativistas.",
+    "company_id": "cajasol",
+    "company_name": "CajaSol",
+    "company_type": "cooperative",
+    "aliases": [
+      "cajasol essential",
+      "cajasol-essential",
+      "cajasol",
+      "cajasol cajasol essential"
+    ]
+  },
+  {
+    "id": "cajasol-cooperativa",
+    "name": "CajaSol Cooperativa",
+    "level": "standard",
+    "coverage_outpatient_pct": 70,
+    "coverage_hospitalization_pct": 80,
+    "coverage_emergency_pct": 90,
+    "copays": {
+      "general": 10,
+      "specialist": 20,
+      "emergency": 35
+    },
+    "summary": "Plan cooperativa; copagos reducidos, devolución de dividendos anuales.",
+    "company_id": "cajasol",
+    "company_name": "CajaSol",
+    "company_type": "cooperative",
+    "aliases": [
+      "cajasol cooperativa",
+      "cajasol-cooperativa",
+      "cajasol",
+      "cajasol cajasol cooperativa"
+    ]
+  },
+  {
+    "id": "cajasol-premium",
+    "name": "CajaSol Premium Coop",
+    "level": "premium",
+    "coverage_outpatient_pct": 80,
+    "coverage_hospitalization_pct": 90,
+    "coverage_emergency_pct": 100,
+    "copays": {
+      "general": 8,
+      "specialist": 18,
+      "emergency": 0
+    },
+    "summary": "Plan premium cooperativa; máxima cobertura con beneficios exclusivos.",
+    "company_id": "cajasol",
+    "company_name": "CajaSol",
+    "company_type": "cooperative",
+    "aliases": [
+      "cajasol premium coop",
+      "cajasol-premium",
+      "cajasol",
+      "cajasol cajasol premium coop"
+    ]
   }
 ]

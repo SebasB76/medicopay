@@ -14,12 +14,34 @@ const HOSPITALS = hospitalsData as Hospital[];
 export function findPlan(input: string | undefined): Plan | undefined {
   if (!input) return undefined;
   const normalized = normalizeText(input);
-  return PLANS.find((p) => {
-    if (normalizeText(p.id) === normalized) return true;
-    if (normalizeText(p.name) === normalized) return true;
-    return p.aliases.some((a) => normalizeText(a) === normalized) ||
-      p.aliases.some((a) => normalized.includes(normalizeText(a)));
-  });
+  
+  // 1. Exacta por ID
+  let result = PLANS.find((p) => normalizeText(p.id) === normalized);
+  if (result) return result;
+  
+  // 2. Exacta por nombre
+  result = PLANS.find((p) => normalizeText(p.name) === normalized);
+  if (result) return result;
+  
+  // 3. Exacta por alias
+  result = PLANS.find((p) => 
+    (p.aliases || []).some((a) => normalizeText(a) === normalized)
+  );
+  if (result) return result;
+  
+  // 4. Búsqueda parcial (incluye)
+  result = PLANS.find((p) => 
+    normalized.includes(normalizeText(p.id)) ||
+    normalized.includes(normalizeText(p.name)) ||
+    (p.aliases || []).some((a) => normalized.includes(normalizeText(a)))
+  );
+  if (result) return result;
+  
+  // 5. Último recurso: cualquier plan que tenga palabras clave
+  return PLANS.find((p) => 
+    normalizeText(p.id).includes(normalized) ||
+    normalizeText(p.name).includes(normalized)
+  );
 }
 
 function pickBaseCopay(plan: Plan, specialty: string, isEmergency: boolean): number {
@@ -35,6 +57,7 @@ function normalizeCity(input: string | undefined): string | undefined {
   const c = normalizeText(input);
   if (c.includes("quito")) return "Quito";
   if (c.includes("guayaquil")) return "Guayaquil";
+  if (c.includes("cuenca")) return "Cuenca";
   return undefined;
 }
 
