@@ -19,6 +19,7 @@ export default function Home() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [symptoms, setSymptoms] = useState("");
   const [city, setCity] = useState("");
+  const [messageCounter, setMessageCounter] = useState(0);
 
   const { messages, append, isLoading, error, reload } = useChat({
     api: "/api/chat",
@@ -70,7 +71,8 @@ export default function Home() {
 
     const userMessage = `Síntomas: ${symptoms.trim()}. Aseguradora: ${selectedCompany?.name}. Plan: ${selectedPlanObject?.name}. Ciudad: ${city}.`;
 
-    const uid = `user-${Date.now()}`;
+    const uid = `user-${messageCounter}`;
+    setMessageCounter(messageCounter + 1);
     lastUserIdRef.current = uid;
     append({ id: uid, role: "user", content: userMessage });
 
